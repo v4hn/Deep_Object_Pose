@@ -196,7 +196,7 @@ class DopeNode(object):
             rospy.get_param('~topic_camera_info'),
             CameraInfo
         )
-        ts = message_filters.TimeSynchronizer([image_sub, info_sub], 1)
+        ts = message_filters.TimeSynchronizer([image_sub, info_sub], 20)
         ts.registerCallback(self.image_callback)
 
         print("Running DOPE...  (Listening to camera topic: '{}')".format(rospy.get_param('~topic_camera')))

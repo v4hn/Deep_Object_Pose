@@ -3,5 +3,8 @@
 
   <node name="dope" pkg="dope" type="dope" output="screen" clear_params="true">
     <rosparam file="$(arg config)"/>
+
+    <remap from="image_raw" to="kinect2/qhd/image_color"/>
+    <remap from="camera_info" to="kinect2/qhd/camera_info"/>
   </node>
 </launch>
